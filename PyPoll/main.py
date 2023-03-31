@@ -5,8 +5,7 @@ import os
 # Module for reading CSV files
 import csv
 
-csvpath = os.path.join("/Users/minali.pinto/Desktop/Homework/python-challenge/PyPoll/Resources","election_data.csv")
- 
+csvpath = os.path.join("/Users/minali.pinto/Desktop/python-challenge/PyPoll/Resources","election_data.csv")
 # Reading using CSV module
 
 with open(csvpath) as csvfile:
@@ -43,7 +42,7 @@ with open(csvpath) as csvfile:
             candidate_dict[candidate_name] = total_votes
 
 # Specify the file to write to
-output_path = os.path.join("/Users/minali.pinto/Desktop/Homework/python-challenge/PyPoll/analysis","Results.txt")
+output_path = os.path.join("/Users/minali.pinto/Desktop/python-challenge/PyPoll/analysis","Results.txt")
 
 # Open the file using "write" mode. Specify the variable to hold the contents
 with open(output_path, 'w') as txtwriter:
