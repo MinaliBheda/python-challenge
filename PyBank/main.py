@@ -5,8 +5,8 @@ import os
 # Module for reading CSV files
 import csv
 
-csvpath = os.path.join("/Users/minali.pinto/Desktop/Homework/python-challenge/PyBank/Resources","budget_data.csv")
-
+csvpath = os.path.join("/Users/minali.pinto/Desktop/python-challenge/PyBank/Resources","budget_data.csv")
+#csvpath = os.path.join("python-challenge/PyBank/Resources","budget_data.csv")
 total_profitloss = 0
 row_count = 0
 pnlChange = 0.0
@@ -61,7 +61,7 @@ index = mylist.index(max_decrease)
 min_date = mydate[index]
 
 # Specify the file to write to
-output_path = os.path.join("/Users/minali.pinto/Desktop/Homework/python-challenge/PyBank/analysis","Results.txt")
+output_path = os.path.join("/Users/minali.pinto/Desktop/python-challenge/PyBank/analysis","Results.txt")
 
 # Open the file using "write" mode. Specify the variable to hold the contents
 with open(output_path, 'w') as txtwriter:
