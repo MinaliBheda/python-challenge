@@ -5,8 +5,8 @@ import os
 # Module for reading CSV files
 import csv
 
-csvpath = os.path.join("/Users/minali.pinto/Desktop/python-challenge/PyBank/Resources","budget_data.csv")
-#csvpath = os.path.join("python-challenge/PyBank/Resources","budget_data.csv")
+csvpath = os.path.join("Resources","budget_data.csv")
+
 total_profitloss = 0
 row_count = 0
 pnlChange = 0.0
@@ -61,7 +61,7 @@ index = mylist.index(max_decrease)
 min_date = mydate[index]
 
 # Specify the file to write to
-output_path = os.path.join("/Users/minali.pinto/Desktop/python-challenge/PyBank/analysis","Results.txt")
+output_path = os.path.join("analysis","Results.txt")
 
 # Open the file using "write" mode. Specify the variable to hold the contents
 with open(output_path, 'w') as txtwriter:
@@ -69,23 +69,25 @@ with open(output_path, 'w') as txtwriter:
 
     # Write the first line
     txtwriter.write('Financial Analysis\n')
+    print("Financial Analysis")
 
     # Write the second line
     txtwriter.write('---------------------------\n')
-
+    print("---------------------------")
     # Write the Total Months
     txtwriter.write('Total Months:' + str(row_count) + '\n')
+    print(f"Total Months: {row_count}")
 
     # Write the Total
     txtwriter.write('Total: $' + str(total_profitloss) + '\n')
-
+    print(f"Total: $ {total_profitloss}")
     # Write the Average Change
     txtwriter.write('Average Change: $' + str(pnl_average) + '\n')
-
+    print(f"Average Change: $ {pnl_average}")
     # Write the Greatest Increase in Profits
     txtwriter.write('Greatest Increase in Profits: ' + max_date + ' ($'+ str(max_increase) + ')' + '\n')
-
+    print(f"Greatest Increase in Profits: {max_date} ($ {max_increase} )")
     # Write the Greatest Decrease in Profits
     txtwriter.write('Greatest Decrease in Profits: ' + min_date + ' ($'+ str(max_decrease) + ')' + '\n')
-
+    print(f"Greatest Decrease in Profits: {min_date} ($ {max_decrease} )")
 
