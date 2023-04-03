@@ -5,7 +5,7 @@ import os
 # Module for reading CSV files
 import csv
 
-csvpath = os.path.join("/Users/minali.pinto/Desktop/python-challenge/PyPoll/Resources","election_data.csv")
+csvpath = os.path.join("Resources","election_data.csv")
 # Reading using CSV module
 
 with open(csvpath) as csvfile:
@@ -42,7 +42,7 @@ with open(csvpath) as csvfile:
             candidate_dict[candidate_name] = total_votes
 
 # Specify the file to write to
-output_path = os.path.join("/Users/minali.pinto/Desktop/python-challenge/PyPoll/analysis","Results.txt")
+output_path = os.path.join("analysis","Results.txt")
 
 # Open the file using "write" mode. Specify the variable to hold the contents
 with open(output_path, 'w') as txtwriter:
@@ -52,16 +52,19 @@ with open(output_path, 'w') as txtwriter:
     
     # Write the first line
     txtwriter.write('Election Results\n')
+    print('Election Results')
 
     # Write the second line
     txtwriter.write('---------------------------\n')
-
+    print('---------------------------')
+    
     # Write the Total Votes
     txtwriter.write('Total Votes: ' + str(row_count) + '\n')
+    print(f"Total Votes: {row_count}")
     
     # Write the next line
     txtwriter.write('---------------------------\n')
-
+    print('---------------------------')
     #Write and calculate The percentage of votes each candidate won
     for key in candidate_dict:
         votes = candidate_dict.get(key)
@@ -74,13 +77,15 @@ with open(output_path, 'w') as txtwriter:
 
          # Write the The percentage of votes each candidate won
         txtwriter.write( key + ': '+ str(percent_votes) + '%' +' (' + str(votes) + ')\n')
+        print(f" {key} :{percent_votes}% ({votes})")
     
     # Write the next line
     txtwriter.write('---------------------------\n')
-
+    print('---------------------------')
     # Write the Winner's Name
     txtwriter.write( 'Winner: '+ max_name + '\n')
-
+    print(f"Winner: {max_name}")
     # Write the next line
     txtwriter.write('---------------------------\n')
+    print('---------------------------')
     
